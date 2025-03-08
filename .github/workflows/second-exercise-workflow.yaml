@@ -19,5 +19,5 @@ jobs:
           print(sys.version)
       - name: 노드버전 출력
         shell: node {0}
-        run:
+        run: |
           console.log(process.version)
