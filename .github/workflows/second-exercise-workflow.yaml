@@ -1,5 +1,6 @@
-name: second-exercise
+name: Multi-Shell Environment Exercise
 on: [push]
+
 jobs:
   multi-shell-job:
     runs-on: windows-latest
