@@ -1,23 +1,27 @@
 name: second-exercise
 on: [push]
 jobs:
-  show-working-directory:
+  multi-shell-job:
     runs-on: windows-latest
     steps:
-      - name: 이름출력
+      - name: Bash - System Information
         shell: bash
-        run:
-          uname -a
-      - name: 컴퓨터정보출력
-        shell: powershell
-        run:
+        run: uname -a
+        
+      - name: PowerShell - Computer Information
+        shell: pwsh
+        run: |
           Get-ComputerInfo
-      - name: 파이썬버전 출력
+          # $PSVersionTable
+          # Get-Host | Select-Object Version
+        
+      - name: Python - Version Information
         shell: python
         run: |
           import sys
           print(sys.version)
-      - name: 노드버전 출력
+          
+      - name: Node.js - Version Information
         shell: node {0}
         run: |
           console.log(process.version)
