@@ -1,0 +1,23 @@
+name: second-exercise
+on: [push]
+jobs:
+  show-working-directory:
+    runs-on: windows-latest
+    steps:
+      - name: 이름출력
+        shell: bash
+        run:
+          uname -a
+      - name: 컴퓨터정보출력
+        shell: powershell
+        run:
+          Get-ComputerInfo
+      - name: 파이썬버전 출력
+        shell: python
+        run: |
+          import sys
+          print(sys.version)
+      - name: 노드버전 출력
+        shell: node
+        run:
+          console.log(process.version)
